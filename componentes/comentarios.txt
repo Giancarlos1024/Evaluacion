@@ -1,0 +1,13 @@
+<p>nombre:ariel barzabal</p>
+<p>correo:cliente@gmail.com</p>
+<p>Fecha y hora: 2024-08-26 15:48:07</p>
+<p>comentario:hola mundo</p>
+<hr/><p>nombre:ariel barzabal</p>
+<p>correo:cliente@gmail.com</p>
+<p>Fecha y hora: 2024-08-26 15:48:07</p>
+<p>comentario:hola mundo</p>
+<hr/><p>nombre:ariel barzabal</p>
+<p>correo:cliente@gmail.com</p>
+<p>Fecha y hora: 2024-08-26 15:50:28</p>
+<p>comentario:dfefsdfsdf</p>
+<hr/>
