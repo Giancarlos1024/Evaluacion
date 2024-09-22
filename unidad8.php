@@ -18,7 +18,23 @@
 	</nav>
 	</header>
 	<section>
-		<h2>Registro</h2>
+		<h2>Registro de Usuario</h2>
+		<form action="cargarusuario.php" method="POST">
+			<label for="email">Email:</label>
+			<input type="email" name="email" required><br>
+			<label for="contrasena">Contraseña:</label>
+			<input type="password" name="contrasena" required><br>
+			<input type="submit" value="Registrar">
+		</form>
+
+		<h2>Ingreso de Usuario</h2>
+		<form action="verificarusuario.php" method="POST">
+			<label for="email">Email:</label>
+			<input type="email" name="email" required><br>
+			<label for="contrasena">Contraseña:</label>
+			<input type="password" name="contrasena" required><br>
+			<input type="submit" value="Ingresar">
+		</form>
 	</section>
 	<aside>
     

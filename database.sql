@@ -1,43 +1,92 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2021 a las 03:06:45
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 7.2.9
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+CREATE DATABASE phpavanzado;
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+CREATE TABLE registro (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL
+);
 
---
--- Base de datos: `php_avanzado`
---
 
--- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `productos`
---
+
+CREATE TABLE `clases` (
+  `id_clase` int NOT NULL,
+  `unidad` varchar(30) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `clases` (`id_clase`, `unidad`, `fecha`) VALUES
+(1, 'hola', '2024-08-15'),
+(2, 'hola', '2024-08-15'),
+(3, 'hola', '2024-08-15'),
+(4, '12', '2024-08-13'),
+(7, '15', '2024-08-06'),
+(8, '17', '2024-08-20'),
+(9, '17', '2024-08-20'),
+(10, '15', '2024-08-20'),
+(12, 'hola', '2024-08-07'),
+(16, 'hola', '2024-08-21'),
+(18, 'hola', '2024-08-13'),
+(19, 'ASAS', '2024-08-14'),
+(20, 'hola', '2024-08-06'),
+(21, 'clari15', '2024-08-21'),
+(22, 'unidad 1', '2024-08-06');
+
+ALTER TABLE `clases`
+  ADD PRIMARY KEY (`id_clase`);
+
+ALTER TABLE `clases`
+  MODIFY `id_clase` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+COMMIT;
+
+
+
+CREATE TABLE `compras` (
+  `id_compra` int NOT NULL,
+  `codigo` int NOT NULL,
+  `producto` varchar(30) NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `precio` decimal(5,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+ALTER TABLE `compras`
+  ADD PRIMARY KEY (`id_compra`);
+COMMIT;
+
+ALTER TABLE `compras`
+  MODIFY `id_compra` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+CREATE TABLE `consultas` (
+  `nombre` varchar(30) NOT NULL,
+  `apellido` varchar(50) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `consulta` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+INSERT INTO `consultas` (`nombre`, `apellido`, `correo`, `consulta`) VALUES
+('', 'rafa', 'aurelio', 'adios consulta eviada'),
+('', 'Ariel', 'Barzabal', 'hola mundo'),
+('', 'Martin', 'Gimenes', 'volve'),
+('', 'juan', 'perez', 'deime que sale\r\n'),
+('', 'Martin', 'Romero', 'creo que pude conectar');
+
+ALTER TABLE `consultas`
+  ADD PRIMARY KEY (`correo`);
+COMMIT;
+
 
 CREATE TABLE `productos` (
-  `codigo` int(30) NOT NULL,
+  `codigo` int NOT NULL,
   `producto` varchar(30) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `precio` decimal(10,2) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `productos`
---
 
 INSERT INTO `productos` (`codigo`, `producto`, `descripcion`, `precio`) VALUES
 (1001, 'Lampara Xenon B54', 'Las lamparas de xenon generan hasta 4 veces mas luz que las lamparas halogenas comunes. El consumo de energia es de 35watt, casi la mitad del consumo de las lamparas halogenas comunes. ', '234.00'),
@@ -57,27 +106,10 @@ INSERT INTO `productos` (`codigo`, `producto`, `descripcion`, `precio`) VALUES
 (1015, 'Lampara Xenon 90FT', 'El funcionamiento mediante la descarga electrica aumenta la cantidad de horas utiles de la lampara, ya que los golpes y las vibraciones no las da?an, como sucede con las lamparas halogenas.', '456.60'),
 (1016, 'Lampara Xenon FG34', 'El funcionamiento mediante la descarga electrica aumenta la cantidad de horas utiles de la lampara, ya que los golpes y las vibraciones no las da?an, como sucede con las lamparas halogenas.', '190.00');
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `productos`
---
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`codigo`);
 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
 ALTER TABLE `productos`
-  MODIFY `codigo` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1023;
+  MODIFY `codigo` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1023;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
